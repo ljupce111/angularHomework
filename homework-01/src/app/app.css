@@ -1,0 +1,9 @@
+.textDiv{
+    display: flex;
+    justify-content: center;
+}
+.componentDiv{
+    display: flex;
+    justify-content: center;
+}
+

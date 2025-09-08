@@ -1,0 +1,14 @@
+<main>
+  <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
+
+  <div class="tasks">
+    <ul>
+      <li *ngFor="let t of tasks; let i = index">
+        <input type="checkbox" [(ngModel)]="t.isCompleted" />
+        <span [style.textDecoration]="t.isCompleted ? 'line-through' : 'none'">
+          {{ t.task }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</main>

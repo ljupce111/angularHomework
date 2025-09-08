@@ -1,0 +1,11 @@
+nav{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    
+}
+nav h3{
+    margin-right: 5%;
+    cursor: pointer;
+}

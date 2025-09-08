@@ -1,0 +1,7 @@
+.textP{
+    display: flex;
+    justify-content: center;
+}
+main input{
+    width: 50%;
+}
