@@ -1,9 +1,9 @@
-import { AddTodo } from '../add-todo/add-todo';
+import { AddTodoComponent } from '../add-todo/add-todo';
 import { Routes } from '@angular/router';
-import { ViewTodos } from '../view-todos/view-todos';
+import { ViewTodosComponent} from '../view-todos/view-todos';
 
 
 export const routes: Routes = [
-    { path:'', component: ViewTodos},
-    { path:'addTodo', component: AddTodo}
+    { path:'', component: ViewTodosComponent},
+    { path:'addTodo', component: AddTodoComponent}
 ];

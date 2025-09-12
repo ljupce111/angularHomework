@@ -1,1 +1,20 @@
-<p>add-todo-component works!</p>
+<main>
+<div class="container">
+  <h2>Add a Todo</h2>
+<div>
+  <input [(ngModel)]="title" placeholder="Title" />
+</div>
+<div>
+  <textarea [(ngModel)]="description" placeholder="Description"></textarea>
+</div>
+<div class="statusBar">
+  <label>Status:</label>
+  <select [(ngModel)]="status">
+    <option value="pending">Pending</option>
+    <option value="in-progress">In Progress</option>
+    <option value="completed">Completed</option>
+  </select>
+</div>
+<button (click)="addTodo()">Add Todo</button>
+</div>
+</main>

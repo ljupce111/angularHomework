@@ -1,15 +1,35 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { TodoService, Todo, TodoStatus } from './../services/todo'
 
 @Component({
-  selector: 'app-add-todo-component',
-  imports: [],
-  templateUrl: './add-todo-component.html',
-  styleUrl: './add-todo-component.css'
+  selector: 'app-add-todo',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './add-todo.html',
+  styleUrls: ['./add-todo.css']
 })
-export class AddTodo {
-    constructor(){}
+export class AddTodoComponent {
+  title: string = '';
+  description: string = '';
+  status: TodoStatus = 'pending';
 
-    ngOnInit(): void{
-      console.log('viewing todo list')
-    }
+  constructor(private todoService: TodoService) {}
+
+  addTodo() {
+    if (!this.title.trim() || !this.description.trim()) return;
+
+    const todo: Todo = {
+      id: Date.now(),
+      title: this.title,
+      description: this.description,
+      status: this.status
+    };
+
+    this.todoService.addTodo(todo);
+
+    this.title = '';
+    this.description = '';
+    this.status = 'pending';
+  }
 }

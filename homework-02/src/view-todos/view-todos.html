@@ -1,1 +1,19 @@
-<p>view-todos works!</p>
+<main><div *ngFor="let todo of todos" 
+     class="todo-card"
+     [ngClass]="{
+       'pending': todo.status === 'pending',
+       'in-progress': todo.status === 'in-progress',
+       'completed': todo.status === 'completed'
+     }">
+  <h3>{{ todo.title }}</h3>
+  <p>{{ todo.description }}</p>
+  <p>Status:
+    <select [value]="todo.status" (change)="changeStatusFromEvent(todo.id, $event)">
+      <option value="pending">Pending</option>
+      <option value="in-progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+  </p>
+  <button (click)="delete(todo.id)">Delete</button>
+</div>
+</main>
