@@ -1,44 +1,78 @@
-main{
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center; 
-  text-size-adjust: 150p;
-  font-size: 4vh;
+  flex-direction: column;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vh;
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
-input{
-    border:0;
-    background-color: aliceblue;
-    width: 300px;
-    border-bottom: 1px solid black;
+
+input,
+textarea,
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-textarea{
-    border: 0;
-    background-color: aliceblue;
-    width: 300px;
-    height: 100%;
-    margin-bottom: 10px;
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
 }
-button{
-    width:300px;
-    height: 40px;
-    background-color:rgb(63, 255, 143);
-    color: white;
-    font-size: x-large;
-    border-radius: 5px;
+
+input.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border-color: #dc3545;
 }
-.statusBar{
-    width: 300px;
+
+input.ng-touched.ng-valid,
+textarea.ng-touched.ng-valid,
+select.ng-touched.ng-valid {
+  border-color: #28a745;
 }
-.statusBar select{
-    font-size: x-large;
-    border:0;
+
+small {
+  color: #dc3545;
+  margin-top: 4px;
+  font-size: 14px;
 }
-.statusBar option{
-    font-size: small;
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
